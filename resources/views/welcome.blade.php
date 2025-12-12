@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        @vite(['resources/js/app.js', 'resources/sass/app.scss'])
+    </head>
+
+    
+
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img src = "https://logos-world.net/wp-content/uploads/2020/11/NBA-Logo.png   " class ="main-img"> </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Легенды NBA</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#">Зал славы</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#">Текущий топ</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href = "#">Расписание</a>
+                </li>
+            </ul>
+            <button class="upload-btn ms-auto">Загрузить</button>
+            </div>
+        </div>
+        </nav>
+    <body>
+
+        <div class="container mt-4">
+            <div class="row">
+                <!-- Карточка 1 -->
+                <div class="col-md-4 col-xl-3 mb-4">
+                    <div class="card">
+                        <div class = "card-type">CHI</div>
+                        <img src="https://s-cdn.sportbox.ru/images/styles/1200-auto/fp_fotos/80/ac/0020ec9acff501fec7777f05f2d89c7e5d8bb3b56b81c369398695.jpg" class="card-img-top img-fluid" alt="Игрок 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Майкл Джордан</h5>
+                            <p class="card-text">Атакующий защитник</p>
+                            <div class="mt-auto text-center">
+                                <a href="#" class="btn btn-primary w-100 player-detail-btn"
+                                    data-bs-toggle="modal" 
+                                    data-bs-target="#playerModal"
+                                    data-player-name="Майкл Джордан"
+                                    data-player-position="Атакующий защитник"
+                                    data-player-team="CHI"
+                                    data-player-number="23"
+                                    data-player-img="https://s-cdn.sportbox.ru/images/styles/1200-auto/fp_fotos/80/ac/0020ec9acff501fec7777f05f2d89c7e5d8bb3b56b81c369398695.jpg"
+                                    data-player-fullname="Майкл Джеффри Джордан"
+                                    data-player-height="198 см"
+                                    data-player-weight="98 кг"
+                                    data-player-age="59 лет"
+                                    data-player-ppg="30.1"
+                                    data-player-rpg="6.2"
+                                    data-player-apg="5.3"
+                                    data-player-bio="6-кратный чемпион NBA, 5-кратный MVP, 14-кратный участник Матча всех звёзд. Считается одним из величайших баскетболистов всех времён.">
+                                        Подробнее
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Карточка 2 -->
+                <div class="col-md-4 col-xl-3 mb-4">
+                    <div class="card">
+                        <div class = "card-type">LAL</div>
+                        <img src="https://cdn-m.sport24.ru/m/7695/bca9/dbe7/4799/91e4/4b06/69cf/850c/1600_10000_max.webp" class="card-img-top" alt="Игрок 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Леброн Джеймс</h5>
+                            <p class="card-text">Форвард</p>
+                            <div class="mt-auto text-center">
+                                <a href="#" class="btn btn-primary w-100 player-detail-btn"
+                                    data-bs-toggle="modal" 
+                                    data-bs-target="#playerModal"
+                                    data-player-name="Леброн Джеймс"
+                                    data-player-position="Лёгкий форвард"
+                                    data-player-team="LAL"
+                                    data-player-number="23"
+                                    data-player-img="https://cdn-m.sport24.ru/m/7695/bca9/dbe7/4799/91e4/4b06/69cf/850c/1600_10000_max.webp"
+                                    data-player-fullname="Леброн Рэймоун Джеймс"
+                                    data-player-height="206 см"
+                                    data-player-weight="113 кг"
+                                    data-player-age="39 лет"
+                                    data-player-ppg="27.2"
+                                    data-player-rpg="7.5"
+                                    data-player-apg="7.3"
+                                    data-player-bio="4-кратный чемпион NBA, 4-кратный MVP, 20-кратный участник Матча всех звёзд. Рекордсмен по набранным очкам в истории NBA. Один из самых универсальных игроков в истории баскетбола.">
+                                    Подробнее
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Карточка 3 -->
+                <div class="col-md-4 col-xl-3 mb-4">
+                    <div class="card">
+                        <div class = "card-type">LAL</div>
+                        <img src="https://deadline.com/wp-content/uploads/2017/12/121207122711-kobe-bryant-smile-120712_1280x720-e1580085430197.jpg?w=681&h=383&crop=1" class="card-img-top" alt="Игрок 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Коби Брайант</h5>
+                            <p class="card-text">Атакующий защитник</p>
+                            <div class="mt-auto text-center">
+                                <a href="#" class="btn btn-primary w-100 player-detail-btn"
+                                    data-bs-toggle="modal" 
+                                    data-bs-target="#playerModal"
+                                    data-player-name="Коби Брайант"
+                                    data-player-position="Атакующий защитник"
+                                    data-player-team="LAL"
+                                    data-player-number="24"
+                                    data-player-img="https://deadline.com/wp-content/uploads/2017/12/121207122711-kobe-bryant-smile-120712_1280x720-e1580085430197.jpg?w=681&h=383&crop=1"
+                                    data-player-fullname="Коби Бин Брайант"
+                                    data-player-height="198 см"
+                                    data-player-weight="96 кг"
+                                    data-player-age="41 лет"
+                                    data-player-ppg="25.0"
+                                    data-player-rpg="5.2"
+                                    data-player-apg="4.7"
+                                    data-player-bio="5-кратный чемпион NBA, 1-кратный MVP, 18-кратный участник Матча всех звёзд. Легенда Los Angeles Lakers. Известен своим невероятным трудолюбием и победным менталитетом 'Mamba Mentality'.">
+                                    Подробнее
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Карточка 4 -->
+                <div class="col-md-4 col-xl-3 mb-4">
+                    <div class="card">
+                        <div class="card-type">GSW</div>
+                        <img src="https://s-cdn.sportbox.ru/images/styles/1200-auto/fp_fotos/c9/83/831ec2de288d1c5adcf41a4fca4bf96462a43a931e9a3027872117.jpg" class="card-img-top" alt="Стефен Карри">
+                        <div class="card-body">
+                            <h5 class="card-title">Стефен Карри</h5>
+                            <p class="card-text">Разыгрывающий защитник</p>
+                            <div class="mt-auto text-center">
+                                <a href="#" class="btn btn-primary w-100 player-detail-btn"
+                                    data-bs-toggle="modal" 
+                                    data-bs-target="#playerModal"
+                                    data-player-name="Стефен Карри"
+                                    data-player-position="Разыгрывающий защитник"
+                                    data-player-team="GSW"
+                                    data-player-number="30"
+                                    data-player-img="https://s-cdn.sportbox.ru/images/styles/1200-auto/fp_fotos/c9/83/831ec2de288d1c5adcf41a4fca4bf96462a43a931e9a3027872117.jpg"
+                                    data-player-fullname="Уорделл Стефен Карри II"
+                                    data-player-height="188 см"
+                                    data-player-weight="84 кг"
+                                    data-player-age="36 лет"
+                                    data-player-ppg="24.8"
+                                    data-player-rpg="4.7"
+                                    data-player-apg="6.4"
+                                    data-player-bio="4-кратный чемпион NBA, 2-кратный MVP, 10-кратный участник Матча всех звёзд. Лучший трёхочковый снайпер в истории NBA. Изменил стиль игры в баскетболе благодаря своей трёхочковой стрельбе.">
+                                    Подробнее
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Карточка 5 -->
+                <div class="col-md-4 col-xl-3 mb-4">
+                    <div class="card">
+                        <div class="card-type">DEN</div>
+                        <img src="https://blog.sneakerhead.ru/content/images/size/w1200/2023/12/steptodown.com500138.jpg" class="card-img-top" alt="Никола Йокич">
+                        <div class="card-body">
+                            <h5 class="card-title">Никола Йокич</h5>
+                            <p class="card-text">Центровой</p>
+                            <div class="mt-auto text-center">
+                                <a href="#" class="btn btn-primary w-100 player-detail-btn"
+                                    data-bs-toggle="modal" 
+                                    data-bs-target="#playerModal"
+                                    data-player-name="Никола Йокич"
+                                    data-player-position="Центровой"
+                                    data-player-team="DEN"
+                                    data-player-number="15"
+                                    data-player-img="https://blog.sneakerhead.ru/content/images/size/w1200/2023/12/steptodown.com500138.jpg"
+                                    data-player-fullname="Никола Йокич"
+                                    data-player-height="211 см"
+                                    data-player-weight="129 кг"
+                                    data-player-age="29 лет"
+                                    data-player-ppg="26.4"
+                                    data-player-rpg="12.4"
+                                    data-player-apg="9.0"
+                                    data-player-bio="Чемпион NBA 2023 года, 2-кратный MVP, 6-кратный участник Матча всех звёзд. Один из самых креативных и умных центровых в истории. Известен своими невероятными передачами и высоким баскетбольным IQ.">
+                                    Подробнее
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="bg-body-tertiary mt-5 py-3">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="mb-0">© 2024 NBA Legends. Сайт создал Дукман Арсений</p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <a href="#">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <div class="modal fade" id="playerModal" tabindex="-1" aria-labelledby="playerModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="playerModalLabel">Детальная информация об игроке</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="row">
+
+                    <div class="col-md-5">
+                        <img src="" class="img-fluid rounded mb-3 modal-player-img" alt="Игрок">
+                        <div class="player-badges">
+                        <span class="badge bg-primary modal-player-position">Защитник</span>
+                        <span class="badge bg-success modal-player-team">LAL</span>
+                        <span class="badge bg-info modal-player-number">№23</span>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-7">
+                        <h3 class="modal-player-name">Имя игрока</h3>
+                        <p class="text-muted modal-player-fullname">Полное имя</p>
+                        
+                        <div class="player-stats mt-4">
+                        <h5>Статистика:</h5>
+                        <div class="row">
+                            <div class="col-6">
+                            <p><strong>Рост:</strong> <span class="modal-player-height">198 см</span></p>
+                            <p><strong>Вес:</strong> <span class="modal-player-weight">98 кг</span></p>
+                            <p><strong>Возраст:</strong> <span class="modal-player-age">35 лет</span></p>
+                            </div>
+                            <div class="col-6">
+                            <p><strong>Очки за игру:</strong> <span class="modal-player-ppg">30.1</span></p>
+                            <p><strong>Подборы за игру:</strong> <span class="modal-player-rpg">6.2</span></p>
+                            <p><strong>Передачи за игру:</strong> <span class="modal-player-apg">5.3</span></p>
+                            </div>
+                            <button type="button" class="btn btn-outline-info" id="careerStatsBtn" 
+                            data-bs-toggle="popover" 
+                            data-bs-placement="right"
+                            data-bs-title="Статистика карьеры"
+                            data-bs-content="Загрузка...">
+                        Статистика карьеры
+                    </button>
+                        </div>
+                        </div>
+                        
+                        <div class="player-bio mt-3">
+                        <h5>Биография:</h5>
+                        <p class="modal-player-bio">Здесь будет подробная информация об игроке.</p>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Закрыть</button>
+                </div>
+                </div>
+            </div>
+            </div>
+
+            <div class="toast-container position-fixed top-0 end-0 p-3">
+                <div id="uploadToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="toast-header">
+                        <strong class="me-auto">NBA Stats</strong>
+                        <small>Только что</small>
+                        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                    <div class="toast-body">
+                        Функционал загрузки временно недоступен.
+                        <i class="fa-solid fa-spinner fa-spin ms-2"></i>
+                    </div>
+                </div>
+            </div>
+
+    </body>
+</html>
