@@ -73,10 +73,12 @@ class PlayerController extends Controller
             abort(404, 'Игрок не найден');
 
         }
+        $totalPlayers = Player::count();
 
 
         return view('players.show', [
-            'player' => $player
+            'player' => $player,
+            'totalPlayers' => $totalPlayers
         ]);
         
 
