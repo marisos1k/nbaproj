@@ -57,7 +57,7 @@
                         <a class="nav-link" href="#">Текущий топ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Расписание</a>
+                        <a class="nav-link" href="{{ route('players.create') }}">Добавить</a>
                     </li>
                 </ul>
                 <button class="upload-btn ms-auto">Загрузить</button>
@@ -92,7 +92,7 @@
                         </div>
                         
                         <div class="card-type">{{ $player->team }}</div>
-                        <img src="https://s-cdn.sportbox.ru/images/styles/1200-auto/fp_fotos/80/ac/0020ec9acff501fec7777f05f2d89c7e5d8bb3b56b81c369398695.jpg" 
+                        <img src="{{ $player ->img_url }}" 
                              class="card-img-top img-fluid" 
                              alt="{{ $player->name }}">
                         <div class="card-body">

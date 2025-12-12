@@ -43,7 +43,7 @@
     
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container">
-            <a class="navbar-brand" href="/">
+            <a class="navbar-brand" href="/players">
                 <img src="https://logos-world.net/wp-content/uploads/2020/11/NBA-Logo.png" height="40">
             </a>
             <a href="{{ route('players.index') }}" class="btn btn-outline-primary">
