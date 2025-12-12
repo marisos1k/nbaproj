@@ -12,11 +12,11 @@ class PlayerController extends Controller
      */
     public function index()
     {
-        $players = Player::All();
-
-        return view('players.index', [
-            'players' => $players
-        ]);
+        $players = Player::all();
+    
+    return view('players.index', [
+        'players' => $players
+    ]);
         
 
     }
