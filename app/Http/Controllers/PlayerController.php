@@ -6,13 +6,18 @@ use Illuminate\Http\Request;
 use App\Models\Player;
 use Illuminate\Support\Facades\Auth;
 
+
+
 class PlayerController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
+
+        
         $players = Player::all();
         // Или по пользователю:
         // $players = Player::where('user_id', Auth::id())->get();

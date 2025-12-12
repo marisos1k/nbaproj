@@ -56,11 +56,28 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Текущий топ</a>
                     </li>
+                    @auth
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('players.create') }}">Добавить</a>
                     </li>
+                    @endauth
                 </ul>
-                <button class="upload-btn ms-auto">Загрузить</button>
+                @auth
+                <form method="POST" action="{{ route('logout') }}" class="ms-auto">
+                    @csrf
+                    <button type="submit" class="pload-btn ms-auto">
+                        Выйти
+                    </button>
+                </form>
+                @else
+                <a href="{{ route('login') }}" class="btn btn-outline-primary me-2 ms-auto">
+                    Войти
+                </a>
+                <a href="{{ route('register') }}" class="btn btn-primary">
+                    Регистрация
+                </a>
+                @endauth
+                <!-- <button class="upload-btn ms-auto">Загрузить</button> -->
             </div>
         </div>
     </nav>
