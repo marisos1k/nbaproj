@@ -119,7 +119,6 @@
         </div>
     </div>
 
-    <!-- Кнопки навигации внизу -->
     <div class="container mt-5 mb-5">
         <div class="d-flex justify-content-center">
             <div class="navigation-buttons d-flex gap-3 align-items-center">
@@ -157,7 +156,6 @@
             </div>
         </div>
         
-        <!-- Информация о клавишах -->
         <div class="text-center mt-3 text-muted small">
             Используйте ← → для навигации
         </div>
@@ -165,7 +163,6 @@
 
     <script>
     document.addEventListener('DOMContentLoaded', function() {
-        // Навигация клавишами
         document.addEventListener('keydown', function(event) {
             @php
                 echo "const prevUrl = '" . route('players.show', $prevPlayer->id) . "';";
@@ -185,7 +182,6 @@
             }
         });
         
-        // Анимация при клике на кнопки
         const navButtons = document.querySelectorAll('.navigation-buttons a');
         navButtons.forEach(button => {
             button.addEventListener('click', function(e) {
