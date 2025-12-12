@@ -9,8 +9,20 @@ class PlayerSeeder extends Seeder
 {
     public function run(): void
     {
+        $user = \App\Models\User::first();
+
+        if (!$user) {
+        // Создаем тестового пользователя если нет
+        $user = \App\Models\User::create([
+            'name' => 'Admin',
+            'email' => 'admin@example.com',
+            'password' => bcrypt('password'),
+        ]);
+        }
+
         $players = [
             [
+                'user_id' => $user->id,
                 'name' => 'ЛеБрон Джеймс',
                 'fullname' => 'ЛеБрон Реймон Джеймс',
                 'position' => 'SF',

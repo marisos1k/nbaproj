@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Player;
+use Illuminate\Support\Facades\Auth;
 
 class PlayerController extends Controller
 {
@@ -13,10 +14,12 @@ class PlayerController extends Controller
     public function index()
     {
         $players = Player::all();
-    
-    return view('players.index', [
-        'players' => $players
-    ]);
+        // Или по пользователю:
+        // $players = Player::where('user_id', Auth::id())->get();
+        
+        return view('players.index', [
+            'players' => $players
+        ]);
         
 
     }
@@ -37,6 +40,8 @@ class PlayerController extends Controller
      */
     public function store(Request $request)
     {
+        
+
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'fullname' => 'nullable|string|max:255',
@@ -52,6 +57,8 @@ class PlayerController extends Controller
             'apg' => 'nullable|numeric|min:0|max:20',
             'bio' => 'nullable|string',
         ]);
+
+        $validated['user_id'] = Auth::id();
 
         $player = Player::create($validated);
 
@@ -89,12 +96,13 @@ class PlayerController extends Controller
      */
     public function edit(string $id)  
     {
-        $player = Player::find($id);
-
-        if (!$player) {
-            abort(404, 'Игрок не найден');
+        $player = Player::findOrFail($id);
+        
+        // Проверяем, принадлежит ли игрок текущему пользователю
+        if ($player->user_id !== Auth::id()) {
+            abort(403, 'У вас нет прав для редактирования этого игрока');
         }
-
+        
         return view('players.edit', [
             'player' => $player,
             'positions' => ['PG', 'SG', 'SF', 'PF', 'C'],
@@ -107,11 +115,11 @@ class PlayerController extends Controller
      */
     public function update(Request $request, string $id)  
     {
-        $player = Player::find($id);
-
-        if (!$player){
-            abort(404, 'Игрок не найден');
-            
+        $player = Player::findOrFail($id);
+        
+        // Проверяем права
+        if ($player->user_id !== Auth::id()) {
+            abort(403, 'У вас нет прав для обновления этого игрока');
         }
         
         $validated = $request->validate([
@@ -143,19 +151,17 @@ class PlayerController extends Controller
      */
     public function destroy(string $id)
     {
-        $player = Player::find($id);
-
-        if (!$player){
-            abort(404, 'Игрок не найден');
-            
+        $player = Player::findOrFail($id);
+        
+        // Проверяем права
+        if ($player->user_id !== Auth::id()) {
+            abort(403, 'У вас нет прав для удаления этого игрока');
         }
-
+        
         $playerName = $player->name;
         $player->delete();
-
+        
         return redirect()->route('players.index')
-                         ->with('success', "Игрок '$playerName' успешно удален!");
-        
-        
+                         ->with('success', "Игрок '$playerName' удален в корзину!");
     }
 }

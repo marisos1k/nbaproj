@@ -3,11 +3,12 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes; // Добавляем трейт
+use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Relations\BelongsTo; // Добавляем
 
 class Player extends Model
 {
-    use SoftDeletes; // Используем Soft Deletes
+    use SoftDeletes;
     
     protected $fillable = [
         'name',
@@ -23,6 +24,7 @@ class Player extends Model
         'rpg',
         'apg',
         'bio',
+        'user_id',
     ];
 
     protected $casts = [
@@ -33,8 +35,13 @@ class Player extends Model
         'apg' => 'float',
         'created_at' => 'datetime:d.m.Y H:i',
         'updated_at' => 'datetime:d.m.Y H:i',
-        'deleted_at' => 'datetime', // Добавляем кастинг для deleted_at
+        'deleted_at' => 'datetime',
     ];
+
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(\App\Models\User::class);
+    }
 
     public function getFormattedCreatedAtAttribute(): string
     {
@@ -46,7 +53,6 @@ class Player extends Model
         return $this->updated_at->format('d.m.Y H:i');
     }
     
-    // Добавляем форматирование для deleted_at
     public function getFormattedDeletedAtAttribute(): ?string
     {
         return $this->deleted_at ? $this->deleted_at->format('d.m.Y H:i') : null;
@@ -57,9 +63,14 @@ class Player extends Model
         return !is_null($this->ppg) || !is_null($this->rpg) || !is_null($this->apg);
     }
     
-    // Проверяем, удален ли игрок (мягко)
     public function isTrashed(): bool
     {
         return !is_null($this->deleted_at);
+    }
+    
+
+    public function belongsToUser($user): bool
+    {
+        return $this->user_id === $user->id;
     }
 }
